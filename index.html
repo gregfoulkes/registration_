@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/registration_numbers.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+
+  <script type="text/x-template" class = 'dislpayRegTemplate'>
+
+    <li class = '{{regClass}}' >{{regDisplay}}</li>
+
+  </script>
+  <title></title>
+</head>
+
+<body>
+  <div class="container ">
+
+    <div class="static">
+      <div class="heading center ">
+        <h4>Registration Numbers</h4>
+        <h4>This Widget is Static</h4>
+
+      </div>
+
+      <div class="regNumInput center">
+        <h6>Enter a Registration Number:</h6>
+        <div class="alert">
+
+        </div>
+        <select class="regSelect" name="regSelect">
+            <option class="regSelect" value="All">All</option>
+            <option class="regSelect" value="CA ">Cape Town</option>
+            <option class="regSelect" value="CY ">Bellville</option>
+            <option class="regSelect" value="CL ">Stellenbosch</option>
+            <option class="regSelect" value="CAW ">George</option>
+
+          </select>
+
+        <input class='regTextandNum' name="regTextandNum" value="">
+
+        <button class="addRegButton" type="button" name="button">Add</button>
+
+      </div>
+      <div class="displayReg center">
+
+      </div>
+      <div class="clearButton center">
+        <button class="clearRegButton" type="button" name="button">Clear</button>
+
+      </div>
+
+    </div>
+    <div class="handleBars">
+      <div class="heading center ">
+        <h4>Registration Numbers</h4>
+        <h4>This Widget Uses Handlebars</h4>
+
+      </div>
+
+      <div class="regNumInput center">
+        <h6>Enter a Registration Number:</h6>
+
+        <div class="alertTwo">
+
+
+        </div>
+        <select class="regSelectTwo" name="regSelect">
+            <option class="regSelectTwo" value="All">All</option>
+            <option class="regSelectTwo" value="CA ">Cape Town</option>
+            <option class="regSelectTwo" value="CY ">Bellville</option>
+            <option class="regSelectTwo" value="CL ">Stellenbosch</option>
+            <option class="regSelectTwo" value="CAW ">George</option>
+
+          </select>
+
+        <input class='regTextandNumTwo' name="regTextandNumTwo" value="">
+
+        <button class="addRegButtonTwo" type="button" name="button">Add</button>
+
+      </div>
+      <div class="displayRegClass center">
+
+      </div>
+      <div class="clearButtonTwo center">
+        <button class="clearRegButton" type="button" name="button">Clear</button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  </div>
+
+
+
+</body>
+<script src="js/registration_numbers.js"></script>
+
+<script src="js/registration_numbers-dom_1.js"></script>
+
+<script src="js/registration_numbers-dom_2.js"></script>
+
+
+
+</html>
