@@ -14,7 +14,7 @@ var clearBtn = document.querySelector('.clearRegButton')
 var townSelectTwo = document.querySelector('.regSelectTwo');
 var regTwo = document.querySelector('.regTextandNumTwo');
 var displayList = document.querySelector('.regList');
-var clearBtnTwo = document.querySelector('.clearRegButtonTwo')
+var clearBtnTwo = document.querySelector('.clearButtonTwo')
 var addBtnTwo = document.querySelector('.addRegButtonTwo')
 
 
@@ -28,25 +28,21 @@ var insertRegDataElem = document.querySelector(".displayRegClass");
 
 // storage references
 
-var storedRegTwo = localStorage.getItem('registrations') ? JSON.parse(localStorage.getItem("registrations")) : {};
-var callRegFunction = RegFunction(storedNumbers);
-
-// functions
-
-// function createReg(regNum) {
-//   let list = document.createElement('li');
-//   list.textContent = regNum;
-//   regDisplay.appendChild(list);
-// }
+var storedRegTwo = localStorage.getItem('registrationsTwo') ? JSON.parse(localStorage.getItem("registrationsTwo")) : {};
+var callRegFunction = RegFunction(storedRegTwo);
 
 function displayFunction() {
-  var regValue = reg.value.trim();
-  reg.value = ''
+  var regValue = regTwo.value.trim();
+  regTwo.value = ''
 
   if (callRegFunction.addRegistration(regValue)) {
     document.querySelector('.alertTwo').innerHTML = '';
-    localStorage.setItem('registrations', JSON.stringify(callRegFunction.mapReg()));
-    createReg(regValue)
+    localStorage.setItem('registrationsTwo', JSON.stringify(callRegFunction.mapReg()));
+
+    insertRegDataElem.innerHTML = regTemplate({
+      regList:  callRegFunction.mapReg()
+
+    })
 
   } else {
     document.querySelector('.alertTwo').innerHTML = 'Please enter a valid registration number';
@@ -54,58 +50,59 @@ function displayFunction() {
   }
 
 }
-// addBtn.addEventListener('click', function() {
-//   displayFunction();
-//
-// });
+
 
 window.addEventListener('load', function() {
 
-  let regLoop = Object.keys(storedNumbers)
+  let regLoop = Object.keys(storedRegTwo)
 
-  if (regLoop.length > 0) {
-    for (var i = 0; i < regLoop.length; i++) {
-      createReg(regLoop[i])
-    }
-  }
+  insertRegDataElem.innerHTML = regTemplate({
+    regList:  callRegFunction.mapReg()
+
+  })
+
 });
 
-townSelect.addEventListener('change', function() {
+townSelectTwo.addEventListener('change', function() {
 
   insertRegDataElem.innerHTML = "";
-  var filterLoop = callRegFunction.filterReg(townSelect.value)
 
-  if (filterLoop.length > 0) {
-    for (var i = 0; i < filterLoop.length; i++) {
-      createReg(filterLoop[i])
-    }
-  }
+  var filterLoop = callRegFunction.filterReg(townSelectTwo.value)
+
+  insertRegDataElem.innerHTML = regTemplate({
+    regList: filterLoop,
+
+  })
+
 });
 
-clearBtn.addEventListener('click', function() {
-  localStorage.clear()
+clearBtnTwo.addEventListener('click', function() {
+  //localStorage.clear()
+  localStorage.removeItem('registrationsTwo')
   window.location.reload()
   insertRegDataElem.innerHTML = ''
 });
 
 addBtnTwo.addEventListener('click', function() {
 
-  var regData = {
-    regClass: 'displayRegClass',
-    regDisplay:  createReg()
+  displayFunction()
 
-  };
-
-  function createReg() {
-    var regValue = regTwo.value
-    callRegFunction.addRegistration(regValue)
-    localStorage.setItem('registrations', JSON.stringify(callRegFunction.mapReg()));
-
-    let list = document.createElement('li');
-    list.textContent = regValue;
-    return insertRegDataElem.appendChild(list);
-  }
-
-  return regTemplate(regData);
+  // var regData = {
+  //   regClass: 'displayRegClass',
+  //   regDisplay:  createReg()
+  //
+  // };
+  //
+  // function createReg() {
+  //   var regValue = regTwo.value
+  //   callRegFunction.addRegistration(regValue)
+  //   localStorage.setItem('registrations', JSON.stringify(callRegFunction.mapReg()));
+  //
+  //   let list = document.createElement('li');
+  //   list.textContent = regValue;
+  //   return insertRegDataElem.appendChild(list);
+  // }
+  //
+  // return regTemplate(regData);
 
 });

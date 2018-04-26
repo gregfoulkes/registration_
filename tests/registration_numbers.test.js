@@ -90,8 +90,8 @@ describe('Map registration numbers', function() {
   it('Should return registrations from CA and registrations from CY', function() {
 
     var callFunction = RegFunction();
-    callFunction.addRegistration('CA 1234')
-    callFunction.addRegistration('CY 1234')
+    callFunction.addRegistration({'CA 1234':0})
+    callFunction.addRegistration({'CY 1234':0})
     callFunction.addRegistration('CD 4321')
 
 

@@ -42,7 +42,7 @@ function RegFunction(storedNumbers) {
   }
 
   function registrationMap(storedNumbers) {
-    return regMap;
+    return Object.keys(regMap);
   }
 
   function returnRegistration() {

@@ -11,8 +11,9 @@
 
   <script type="text/x-template" class = 'dislpayRegTemplate'>
 
-    <li class = '{{regClass}}' >{{regDisplay}}</li>
-
+    {{#each regList}}
+    <li class = '{{regClass}}' >{{this}}</li>
+    {{/each}}
   </script>
   <title></title>
 </head>
@@ -38,7 +39,6 @@
             <option class="regSelect" value="CY ">Bellville</option>
             <option class="regSelect" value="CL ">Stellenbosch</option>
             <option class="regSelect" value="CAW ">George</option>
-
           </select>
 
         <input class='regTextandNum' name="regTextandNum" value="">
@@ -75,7 +75,7 @@
             <option class="regSelectTwo" value="CY ">Bellville</option>
             <option class="regSelectTwo" value="CL ">Stellenbosch</option>
             <option class="regSelectTwo" value="CAW ">George</option>
-
+            
           </select>
 
         <input class='regTextandNumTwo' name="regTextandNumTwo" value="">
