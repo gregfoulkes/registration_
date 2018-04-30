@@ -1,7 +1,7 @@
-function RegFunction(storedNumbers) {
+function RegFunction(storage) {
 
   var regNum = '';
-  var regMap = storedNumbers || {};
+  var regMap = storage || {};
 
   function addRegistrationNumbers(reg) {
 
@@ -41,7 +41,7 @@ function RegFunction(storedNumbers) {
 
   }
 
-  function registrationMap(storedNumbers) {
+  function registrationMap(storage) {
     return Object.keys(regMap);
   }
 

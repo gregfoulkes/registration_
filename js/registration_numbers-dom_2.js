@@ -1,14 +1,5 @@
 
 
-// dom 1 references
-
-var townSelect = document.querySelector('.regSelect');
-var reg = document.querySelector('.regTextandNum');
-var addBtn = document.querySelector('.addRegButton');
-var regDisplay = document.querySelector('.displayReg');
-var displayList = document.querySelector('.regList');
-var clearBtn = document.querySelector('.clearRegButton')
-
 // dom 2 references
 
 var townSelectTwo = document.querySelector('.regSelectTwo');
@@ -27,15 +18,24 @@ var regTemplate = Handlebars.compile(regTemplateSource);
 var insertRegDataElem = document.querySelector(".displayRegClass");
 
 // storage references
+// function storageTwo(){
+//
+//   if(localStorage['registrationsTwo']){
+//   var storedRegTwo = localStorage.getItem('registrationsTwo') ? JSON.parse(localStorage.getItem('registrationsTwo')) : {};
+//
+//   }
+// return storedRegTwo
+//
+// }
 
-var storedRegTwo = localStorage.getItem('registrationsTwo') ? JSON.parse(localStorage.getItem("registrationsTwo")) : {};
+var storedRegTwo = localStorage.getItem('registrationsTwo') ? JSON.parse(localStorage.getItem('registrationsTwo')) : {};
 var callRegFunction = RegFunction(storedRegTwo);
 
 function displayFunction2() {
-  var regValue = regTwo.value;
+  var regValueTwo = regTwo.value;
   regTwo.value = ''
 
-  if (callRegFunction.addRegistration(regValue)) {
+  if (callRegFunction.addRegistration(regValueTwo)) {
     document.querySelector('.alertTwo').innerHTML = '';
     localStorage.setItem('registrationsTwo', JSON.stringify(callRegFunction.mapReg()));
 
@@ -84,25 +84,9 @@ clearBtnTwo.addEventListener('click', function() {
 });
 
 addBtnTwo.addEventListener('click', function() {
+  storageTwo()
 
   displayFunction2()
 
-  // var regData = {
-  //   regClass: 'displayRegClass',
-  //   regDisplay:  createReg()
-  //
-  // };
-  //
-  // function createReg() {
-  //   var regValue = regTwo.value
-  //   callRegFunction.addRegistration(regValue)
-  //   localStorage.setItem('registrations', JSON.stringify(callRegFunction.mapReg()));
-  //
-  //   let list = document.createElement('li');
-  //   list.textContent = regValue;
-  //   return insertRegDataElem.appendChild(list);
-  // }
-  //
-  // return regTemplate(regData);
 
 });

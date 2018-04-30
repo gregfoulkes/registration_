@@ -58,7 +58,7 @@ townSelect.addEventListener('change', function() {
 });
 
 clearBtn.addEventListener('click', function() {
-  localStorage.clear()
+  localStorage.clear('registrations')
   window.location.reload()
   regDisplay.innerHTML = ''
 });
