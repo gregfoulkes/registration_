@@ -83,22 +83,22 @@ describe('Map registration numbers', function() {
     callFunction.addRegistration('CD 4321')
 
 
-    assert.deepEqual(callFunction.mapReg(), {
-      'CA 1234': 0
-    })
+    assert.deepEqual(callFunction.mapReg(), [
+      'CA 1234']
+    )
   });
   it('Should return registrations from CA and registrations from CY', function() {
 
     var callFunction = RegFunction();
-    callFunction.addRegistration({'CA 1234':0})
-    callFunction.addRegistration({'CY 1234':0})
+    callFunction.addRegistration('CA 1234')
+    callFunction.addRegistration('CY 1234')
     callFunction.addRegistration('CD 4321')
 
 
-    assert.deepEqual(callFunction.mapReg(), {
-      'CA 1234': 0,
-      'CY 1234': 0
-    })
+    assert.deepEqual(callFunction.mapReg(), [
+      'CA 1234',
+      'CY 1234'
+    ])
   });
 
   it('Should return registrations from CA, CY and CL', function() {
@@ -109,11 +109,11 @@ describe('Map registration numbers', function() {
     callFunction.addRegistration('CL 1234')
     callFunction.addRegistration('CD 4321')
 
-    assert.deepEqual(callFunction.mapReg(), {
-      'CA 1234': 0,
-      'CY 1234': 0,
-      'CL 1234': 0
-    })
+    assert.deepEqual(callFunction.mapReg(), [
+      'CA 1234',
+      'CY 1234',
+      'CL 1234'
+    ])
   });
 });
 

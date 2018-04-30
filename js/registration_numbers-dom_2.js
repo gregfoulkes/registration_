@@ -31,8 +31,8 @@ var insertRegDataElem = document.querySelector(".displayRegClass");
 var storedRegTwo = localStorage.getItem('registrationsTwo') ? JSON.parse(localStorage.getItem("registrationsTwo")) : {};
 var callRegFunction = RegFunction(storedRegTwo);
 
-function displayFunction() {
-  var regValue = regTwo.value.trim();
+function displayFunction2() {
+  var regValue = regTwo.value;
   regTwo.value = ''
 
   if (callRegFunction.addRegistration(regValue)) {
@@ -85,7 +85,7 @@ clearBtnTwo.addEventListener('click', function() {
 
 addBtnTwo.addEventListener('click', function() {
 
-  displayFunction()
+  displayFunction2()
 
   // var regData = {
   //   regClass: 'displayRegClass',

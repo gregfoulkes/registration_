@@ -14,7 +14,7 @@ function createReg(regNum) {
   regDisplay.appendChild(list);
 }
 
-function displayFunction() {
+function displayFunction1() {
   var regValue = reg.value.trim();
   reg.value = ''
 
@@ -30,7 +30,7 @@ function displayFunction() {
 
 }
 addBtn.addEventListener('click', function() {
-  displayFunction();
+  displayFunction1();
 
 });
 
