@@ -46,7 +46,7 @@ function displayFunction2() {
 
 window.addEventListener('load', function() {
 
-  let regLoop = Object.keys(storedRegTwo)
+  // let regLoop = Object.keys(storedRegTwo)
 
   insertRegDataElem.innerHTML = regTemplate({
     regList:  callRegFunctionTwo.mapReg()

@@ -1,7 +1,14 @@
 function RegFunction(storage) {
 
-  var regNum = '';
-  var regMap = storage || {};
+  var regMap = {};
+
+  if (storage) {
+    for(var i = 0; i< storage.length; i++){
+      //storage = regMap[i]
+      var regNumber = storage[i];
+      regMap[regNumber] = 0
+    }
+  }
 
   function addRegistrationNumbers(reg) {
 
@@ -10,10 +17,9 @@ function RegFunction(storage) {
     if (reg != '') {
       if (regMap[reg] === undefined) {
         for (var i = 0; i < regList.length; i++) {
-
           if (reg.startsWith(regList[i])) {
-            regNum = reg;
-            regMap[regNum] = 0;
+
+            regMap[reg] = 0;
             return true;
           }
         }
@@ -54,6 +60,5 @@ function RegFunction(storage) {
     addRegistration: addRegistrationNumbers,
     registrationReturn: returnRegistration,
     filterReg: filterRegBy,
-
   }
 }

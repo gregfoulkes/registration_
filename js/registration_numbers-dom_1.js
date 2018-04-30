@@ -36,11 +36,11 @@ addBtn.addEventListener('click', function() {
 
 window.addEventListener('load', function() {
 
-  let regLoop = Object.keys(storedNumbers)
+  // let regLoop = Object.keys(storedNumbers)
 
-  if (regLoop.length > 0) {
-    for (var i = 0; i < regLoop.length; i++) {
-      createReg(regLoop[i])
+  if (storedNumbers.length > 0) {
+    for (var i = 0; i < storedNumbers.length; i++) {
+      createReg(storedNumbers[i])
     }
   }
 });
@@ -58,7 +58,7 @@ townSelect.addEventListener('change', function() {
 });
 
 clearBtn.addEventListener('click', function() {
-  localStorage.clear('registrations')
+  localStorage.removeItem('registrations')
   window.location.reload()
   regDisplay.innerHTML = ''
 });

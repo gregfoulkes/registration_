@@ -17,6 +17,7 @@ describe('Filter registration numbers', function() {
 
   });
 
+
   it('Should return registrations from Bellville only ', function() {
     var callFunction = RegFunction();
 
@@ -147,4 +148,21 @@ describe('Sort registration numbers', function() {
 
     assert.equal(callFunction.addRegistration('CJ 1234'), false)
   });
+});
+
+describe('Initialize Map Reg Numbers', function() {
+  it('Should return initialised map', function(){
+
+        var callFunction = RegFunction(['CA 1234',
+          'CA 4321',
+          'CAW 4321',
+          'CD 4321']);
+
+
+        assert.deepEqual(callFunction.mapReg(), ['CA 1234',
+          'CA 4321',
+          'CAW 4321',
+          'CD 4321']);
+
+      });
 });
