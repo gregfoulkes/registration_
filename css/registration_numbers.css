@@ -138,3 +138,19 @@ body {
   width: 100%;
   margin: 10px;
 }
+
+@media (max-width: 500px) {
+
+  .handleBars{
+    width: 90%;
+    padding:20px;
+    float: left;
+  }
+
+  .static{
+    width: 90%;
+    padding:20px;
+    float: left;
+  }
+
+}

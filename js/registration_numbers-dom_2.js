@@ -1,5 +1,3 @@
-
-
 // dom 2 references
 
 var townSelectTwo = document.querySelector('.regSelectTwo');
@@ -17,8 +15,6 @@ var regTemplate = Handlebars.compile(regTemplateSource);
 
 var insertRegDataElem = document.querySelector(".displayRegClass");
 
-
-
 var storedRegTwo = localStorage.getItem('registrationsTwo') ? JSON.parse(localStorage.getItem('registrationsTwo')) : {};
 
 var callRegFunctionTwo = RegFunction(storedRegTwo);
@@ -32,7 +28,7 @@ function displayFunction2() {
     localStorage.setItem('registrationsTwo', JSON.stringify(callRegFunctionTwo.mapReg()));
 
     insertRegDataElem.innerHTML = regTemplate({
-      regList:  callRegFunctionTwo.mapReg()
+      regList: callRegFunctionTwo.mapReg()
 
     })
 
@@ -49,7 +45,7 @@ window.addEventListener('load', function() {
   // let regLoop = Object.keys(storedRegTwo)
 
   insertRegDataElem.innerHTML = regTemplate({
-    regList:  callRegFunctionTwo.mapReg()
+    regList: callRegFunctionTwo.mapReg()
 
   })
 

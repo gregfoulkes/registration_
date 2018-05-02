@@ -3,8 +3,7 @@ function RegFunction(storage) {
   var regMap = {};
 
   if (storage) {
-    for(var i = 0; i< storage.length; i++){
-      //storage = regMap[i]
+    for (var i = 0; i < storage.length; i++) {
       var regNumber = storage[i];
       regMap[regNumber] = 0
     }

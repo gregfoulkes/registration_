@@ -36,8 +36,6 @@ addBtn.addEventListener('click', function() {
 
 window.addEventListener('load', function() {
 
-  // let regLoop = Object.keys(storedNumbers)
-
   if (storedNumbers.length > 0) {
     for (var i = 0; i < storedNumbers.length; i++) {
       createReg(storedNumbers[i])
