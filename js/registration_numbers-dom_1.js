@@ -29,6 +29,7 @@ function displayFunction1() {
   }
 
 }
+
 addBtn.addEventListener('click', function() {
   displayFunction1();
 

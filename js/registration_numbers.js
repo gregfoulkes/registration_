@@ -50,14 +50,11 @@ function RegFunction(storage) {
     return Object.keys(regMap);
   }
 
-  function returnRegistration() {
-    return regNum;
-  }
+
 
   return {
     mapReg: registrationMap,
     addRegistration: addRegistrationNumbers,
-    registrationReturn: returnRegistration,
     filterReg: filterRegBy,
   }
 }
